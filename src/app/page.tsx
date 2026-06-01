@@ -10,14 +10,14 @@ export const metadata: Metadata = {
 };
 
 const restaurants = [
-  { name: "Alte Kanzlei", neighborhood: "Mitte · Schillerplatz", vibe: "Grand Swabian classics in a centuries-old hall right opposite the Old Castle. The outdoor terrace is pure Stuttgart magic.", emoji: "🏰", tag: "Must-Visit", tagColor: "#CC5959" },
-  { name: "CUBE Restaurant", neighborhood: "Mitte · Schlossplatz", vibe: "Stuttgart's most photogenic restaurant. Glass-walled terrace, city panorama, modern cuisine. Built for content.", emoji: "🔲", tag: "Instagrammable", tagColor: "#4E342E" },
-  { name: "Restaurant Délice", neighborhood: "Mitte · Bohnenviertel", vibe: "Intimate French-leaning fine dining. Tasting menus in candlelit elegance. The ultimate date night in Stuttgart.", emoji: "✨", tag: "Fine Dining", tagColor: "#6D4C41" },
-  { name: "Markthalle Stuttgart", neighborhood: "Mitte · Dorotheenstraße", vibe: "1914 Art Nouveau market hall. Global produce, fresh pasta, cheeses. The upper-gallery shot is pure gold.", emoji: "🏺", tag: "Iconic", tagColor: "#E6B35A" },
-  { name: "Ochs'n Willi", neighborhood: "Mitte · Schillerstraße", vibe: "The quintessential Swabian tavern. Maultaschen, pork knuckle, local wine. Every Stuttgart food story starts here.", emoji: "🍻", tag: "Swabian Soul", tagColor: "#4E342E" },
-  { name: "La Bruschetta", neighborhood: "Bohnenviertel", vibe: "Hidden Italian trattoria in a cobblestone alley. Handmade pasta, wood-fired pizza. The perfect secret find video.", emoji: "🍝", tag: "Hidden Gem", tagColor: "#CC5959" },
-  { name: "Sendo Matcha", neighborhood: "Mitte · Königsstraße", vibe: "Ceremonial-grade matcha drinks and workshops. Minimal green aesthetic. Whisk-pour videos practically make themselves.", emoji: "🍵", tag: "Trending", tagColor: "#556B2F" },
-  { name: "Cinnamood", neighborhood: "Nord · Milaneo", vibe: "Creative frosted cinnamon rolls with rotating fillings. The pull-apart shot is pure TikTok dopamine.", emoji: "🌀", tag: "TikTok Viral", tagColor: "#010101" },
+  { name: "Alte Kanzlei", neighborhood: "Mitte · Schillerplatz", vibe: "Schwäbische Klassiker in einer jahrhundertealten Halle direkt gegenüber dem Alten Schloss. Die Terrasse am Schillerplatz ist pures Stuttgart-Feeling.", emoji: "🏰", tag: "Pflichtbesuch", tagColor: "#CC5959" },
+  { name: "CUBE Restaurant", neighborhood: "Mitte · Schlossplatz", vibe: "Stuttgarts fotogenischstes Restaurant. Verglaste Terrasse mit Panoramablick auf den Schlossplatz. Modern, elegant — gemacht für Content.", emoji: "🔲", tag: "Instagrammable", tagColor: "#4E342E" },
+  { name: "Restaurant Délice", neighborhood: "Mitte · Bohnenviertel", vibe: "Intimes Fine-Dining-Juwel mit französischen Einflüssen. Tasting Menus bei Kerzenlicht. Das perfekte Date-Night-Restaurant in Stuttgart.", emoji: "✨", tag: "Fine Dining", tagColor: "#6D4C41" },
+  { name: "Markthalle Stuttgart", neighborhood: "Mitte · Dorotheenstraße", vibe: "Jugendstil-Markthalle von 1914 mit weltweiten Produkten, frischer Pasta und Käse. Der Blick von der Galerie hinunter auf die Stände ist ein Bild-im-Kasten.", emoji: "🏺", tag: "Kult-Spot", tagColor: "#E6B35A" },
+  { name: "Ochs'n Willi", neighborhood: "Mitte · Schillerstraße", vibe: "Die schwäbisch-bayrische Wirtschaft in Stuttgart. Maultaschen, Haxe, Bier. Jede gute Stuttgart-Food-Geschichte beginnt hier.", emoji: "🍻", tag: "Schwäbische Seele", tagColor: "#4E342E" },
+  { name: "La Bruschetta", neighborhood: "Bohnenviertel", vibe: "Versteckte italienische Trattoria in einem Kopfsteinpflaster-Gässchen. Hausgemachte Pasta, holzbefeuerter Ofen. Der ideale Geheimtipp-Content.", emoji: "🍝", tag: "Geheimtipp", tagColor: "#CC5959" },
+  { name: "Sendo Matcha", neighborhood: "Mitte · Königsstraße", vibe: "Japanische Matcha-Spezialitäten und Workshops. Minimalistisches grünes Ambiente. Der Whisk-Pour dreht sich von selbst.", emoji: "🍵", tag: "Im Trend", tagColor: "#556B2F" },
+  { name: "Cinnamood", neighborhood: "Nord · Milaneo", vibe: "Kreative Zimtschnecken mit wechselnden Füllungen. Der Pull-Apart-Shot ist pures TikTok-Dopamin.", emoji: "🌀", tag: "TikTok Viral", tagColor: "#010101" },
 ];
 
 const faqs = [
@@ -58,9 +58,9 @@ export default function HomePage() {
           </div>
 
           <h1 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "clamp(2.5rem, 8vw, 5.5rem)", fontWeight: 800, color: "#F5F0E8", lineHeight: 1.08, letterSpacing: "-0.02em", marginBottom: "1.5rem" }}>
-            Stuttgart&apos;s{" "}
+            Stuttgarts{" "}
             <span style={{ background: "linear-gradient(135deg, #E6B35A 0%, #CC5959 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-              Tastiest
+              leckerster
             </span>
             <br />Food Blog
           </h1>
@@ -69,6 +69,11 @@ export default function HomePage() {
             Ich bin <strong style={{ color: "#F5F0E8" }}>Alex</strong> — und ich zeige dir die besten Restaurants,
             versteckte Geheimtipps und die leckersten Rezepte aus Stuttgart.
             Jeden Tag neu auf Instagram, TikTok & YouTube.
+          </p>
+
+          {/* Reason to follow hook */}
+          <p style={{ fontSize: "0.9rem", color: "#E6B35A", fontWeight: 600, marginBottom: "1.5rem", letterSpacing: "0.02em" }}>
+            Jeden Mittwoch: der neue Stuttgarter Geheimtipp — zuerst für Follower.
           </p>
 
           <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap", marginBottom: "3.5rem" }}>
@@ -83,20 +88,26 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── STATS BAR ── */}
-      <section style={{ background: "#E6B35A", padding: "1.25rem 1.5rem", display: "flex", justifyContent: "center", gap: "3rem", flexWrap: "wrap" }}>
-        {[
-          { platform: "Instagram", stat: "Growing fast", icon: "📸" },
-          { platform: "TikTok", stat: "Viral content", icon: "🎬" },
-          { platform: "YouTube", stat: "Food videos", icon: "▶️" },
-          { platform: "Stuttgart", stat: "#1 Food Blog", icon: "🍽️" },
-        ].map((s) => (
-          <div key={s.platform} style={{ textAlign: "center" }}>
-            <div style={{ fontSize: "1.1rem" }}>{s.icon}</div>
-            <div style={{ fontWeight: 700, color: "#1C1917", fontSize: "0.95rem" }}>{s.stat}</div>
-            <div style={{ fontSize: "0.75rem", color: "rgba(28,25,23,0.65)", fontWeight: 500 }}>{s.platform}</div>
-          </div>
-        ))}
+      {/* ── SOCIAL PROOF BAR ── */}
+      <section style={{ background: "#1C1917", borderBottom: "1px solid rgba(230,179,90,0.15)", padding: "0.875rem 1.5rem", display: "flex", justifyContent: "center", alignItems: "center", gap: "2.5rem", flexWrap: "wrap" }}>
+        <a href={siteConfig.instagram} target="_blank" rel="noopener noreferrer" style={{ display: "flex", flexDirection: "column", alignItems: "center", textDecoration: "none", gap: "1px" }}>
+          <span style={{ fontWeight: 800, color: "#F5F0E8", fontSize: "1rem", lineHeight: 1 }}>1.3K</span>
+          <span style={{ fontSize: "0.7rem", color: "rgba(245,240,232,0.45)", letterSpacing: "0.06em", textTransform: "uppercase" }}>Instagram</span>
+        </a>
+        <div style={{ width: "1px", height: "28px", background: "rgba(245,240,232,0.1)" }} />
+        <a href={siteConfig.tiktok} target="_blank" rel="noopener noreferrer" style={{ display: "flex", flexDirection: "column", alignItems: "center", textDecoration: "none", gap: "1px" }}>
+          <span style={{ fontWeight: 800, color: "#F5F0E8", fontSize: "1rem", lineHeight: 1 }}>156</span>
+          <span style={{ fontSize: "0.7rem", color: "rgba(245,240,232,0.45)", letterSpacing: "0.06em", textTransform: "uppercase" }}>Posts</span>
+        </a>
+        <div style={{ width: "1px", height: "28px", background: "rgba(245,240,232,0.1)" }} />
+        <span style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "1px" }}>
+          <span style={{ fontWeight: 800, color: "#E6B35A", fontSize: "1rem", lineHeight: 1 }}>#1</span>
+          <span style={{ fontSize: "0.7rem", color: "rgba(245,240,232,0.45)", letterSpacing: "0.06em", textTransform: "uppercase" }}>Stuttgart Food</span>
+        </span>
+        <div style={{ width: "1px", height: "28px", background: "rgba(245,240,232,0.1)" }} />
+        <a href={siteConfig.tiktok} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", padding: "0.4rem 1rem", borderRadius: "9999px", background: "rgba(230,179,90,0.12)", border: "1px solid rgba(230,179,90,0.3)", color: "#E6B35A", fontWeight: 600, fontSize: "0.78rem", textDecoration: "none" }}>
+          🎬 Viral auf TikTok
+        </a>
       </section>
 
       {/* ── RESTAURANT GUIDE ── */}
@@ -107,7 +118,7 @@ export default function HomePage() {
               Von Alex empfohlen
             </span>
             <h2 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 700, color: "#1C1917", marginBottom: "0.75rem" }}>
-              Stuttgart&apos;s Best Restaurants
+              Stuttgarts beste Restaurants
             </h2>
             <p style={{ color: "rgba(28,25,23,0.65)", fontSize: "1.05rem", maxWidth: "540px", margin: "0 auto" }}>
               Meine persönlichen Favoriten — von Fine Dining bis Street Food, von der Markthalle bis zum versteckten Bohnenviertel-Gem.
@@ -270,7 +281,7 @@ function BigSocialButton({ href, label, handle, bg, border }: { href: string; la
 
 function RestaurantCard({ name, neighborhood, vibe, emoji, tag, tagColor }: { name: string; neighborhood: string; vibe: string; emoji: string; tag: string; tagColor: string }) {
   return (
-    <div className="restaurant-card" style={{ background: "#fff", borderRadius: "16px", padding: "1.5rem", boxShadow: "0 2px 16px rgba(78,52,46,0.07)", transition: "transform 0.25s ease, box-shadow 0.25s ease", border: "1px solid rgba(78,52,46,0.06)" }}>
+    <Link href="/restaurant-guide" className="restaurant-card" style={{ background: "#fff", borderRadius: "16px", padding: "1.5rem", boxShadow: "0 2px 16px rgba(78,52,46,0.07)", transition: "transform 0.25s ease, box-shadow 0.25s ease", border: "1px solid rgba(78,52,46,0.06)", textDecoration: "none", display: "block" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "1rem" }}>
         <span style={{ fontSize: "2rem" }}>{emoji}</span>
         <span style={{ padding: "0.25rem 0.75rem", borderRadius: "9999px", background: tagColor, color: tagColor === "#E6B35A" ? "#1C1917" : "#fff", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.04em" }}>
@@ -279,7 +290,8 @@ function RestaurantCard({ name, neighborhood, vibe, emoji, tag, tagColor }: { na
       </div>
       <h3 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "1.2rem", fontWeight: 700, color: "#1C1917", marginBottom: "0.25rem" }}>{name}</h3>
       <div style={{ fontSize: "0.78rem", color: "#CC5959", fontWeight: 600, marginBottom: "0.75rem" }}>📍 {neighborhood}</div>
-      <p style={{ fontSize: "0.875rem", color: "rgba(28,25,23,0.65)", lineHeight: 1.6 }}>{vibe}</p>
-    </div>
+      <p style={{ fontSize: "0.875rem", color: "rgba(28,25,23,0.65)", lineHeight: 1.6, marginBottom: "0.75rem" }}>{vibe}</p>
+      <span style={{ fontSize: "0.78rem", color: "#4E342E", fontWeight: 600 }}>Mehr lesen →</span>
+    </Link>
   );
 }

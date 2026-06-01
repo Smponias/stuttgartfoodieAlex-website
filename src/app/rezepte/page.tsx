@@ -17,6 +17,15 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://stuttgartfoodiealex.de/rezepte" },
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://stuttgartfoodiealex.de" },
+    { "@type": "ListItem", position: 2, name: "Schwäbische Rezepte", item: "https://stuttgartfoodiealex.de/rezepte" },
+  ],
+};
+
 const maultaschenSchema = {
   "@context": "https://schema.org/",
   "@type": "Recipe",
@@ -259,6 +268,10 @@ export default function RezeptePage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(maultaschenSchema) }}
@@ -510,25 +523,9 @@ export default function RezeptePage() {
                     </span>
                   ))}
                 </div>
-                <a
-                  href={siteConfig.youtube}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    display: "block",
-                    marginTop: "1rem",
-                    padding: "0.6rem 1rem",
-                    borderRadius: "8px",
-                    background: "#FF0000",
-                    color: "#fff",
-                    fontWeight: 600,
-                    textDecoration: "none",
-                    fontSize: "0.8rem",
-                    textAlign: "center",
-                  }}
-                >
-                  ▶ Video ansehen
-                </a>
+                <div style={{ marginTop: "1rem", padding: "0.6rem 1rem", borderRadius: "8px", background: "rgba(255,0,0,0.07)", border: "1px solid rgba(255,0,0,0.15)", fontSize: "0.78rem", color: "#CC0000", fontWeight: 600, textAlign: "center" }}>
+                  ▶ Video-Anleitung auf YouTube
+                </div>
               </article>
             ))}
           </div>

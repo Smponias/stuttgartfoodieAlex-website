@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
-import { localBusinessSchema } from "@/lib/schema";
+import { localBusinessSchema, websiteAndPersonSchema } from "@/lib/schema";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import StickyFollowBar from "@/components/StickyFollowBar";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -78,14 +79,12 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "your-google-verification-code",
-  },
+  // Add your real GSC token here after connecting in Google Search Console
+  // verification: { google: "YOUR_REAL_TOKEN_HERE" },
   alternates: {
     canonical: "https://stuttgartfoodiealex.de",
     languages: {
       "de-DE": "https://stuttgartfoodiealex.de",
-      "en-US": "https://stuttgartfoodiealex.de/en",
     },
   },
 };
@@ -102,6 +101,10 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteAndPersonSchema) }}
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
@@ -109,6 +112,7 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <StickyFollowBar />
       </body>
     </html>
   );

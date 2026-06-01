@@ -19,27 +19,42 @@ export const metadata: Metadata = {
 
 const restaurantSchema = {
   "@context": "https://schema.org",
-  "@type": "ItemList",
-  name: "Best Restaurants in Stuttgart – StuttgartFoodieAlex Guide 2026",
-  description:
-    "Alex' personally curated list of the best restaurants in Stuttgart, Germany — from traditional Swabian classics to modern fine dining.",
-  url: "https://stuttgartfoodiealex.de/restaurant-guide",
-  author: {
-    "@type": "Person",
-    name: "Alex",
-    url: "https://stuttgartfoodiealex.de/ueber-mich",
-  },
-  numberOfItems: 9,
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Alte Kanzlei", url: "https://alte-kanzlei-stuttgart.de" },
-    { "@type": "ListItem", position: 2, name: "CUBE Restaurant", url: "https://www.cube-restaurant.de" },
-    { "@type": "ListItem", position: 3, name: "Restaurant Délice" },
-    { "@type": "ListItem", position: 4, name: "Markthalle Stuttgart", url: "https://www.markthalle-stuttgart.de" },
-    { "@type": "ListItem", position: 5, name: "Ochs'n Willi", url: "https://ochsn-willi.de" },
-    { "@type": "ListItem", position: 6, name: "La Bruschetta" },
-    { "@type": "ListItem", position: 7, name: "Sendo Matcha" },
-    { "@type": "ListItem", position: 8, name: "Cinnamood" },
-    { "@type": "ListItem", position: 9, name: "José y Josefina" },
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://stuttgartfoodiealex.de" },
+        { "@type": "ListItem", position: 2, name: "Stuttgart Restaurant Guide 2026", item: "https://stuttgartfoodiealex.de/restaurant-guide" },
+      ],
+    },
+    {
+      "@type": "ItemList",
+      name: "Beste Restaurants in Stuttgart – StuttgartFoodieAlex Guide 2026",
+      description: "Alex' persönlich getestete und empfohlene Restaurants in Stuttgart — von traditioneller Schwäbischer Küche bis Fine Dining.",
+      url: "https://stuttgartfoodiealex.de/restaurant-guide",
+      author: { "@type": "Person", "@id": "https://stuttgartfoodiealex.de/#person", name: "Alex" },
+      numberOfItems: 9,
+      itemListElement: [
+        { "@type": "ListItem", position: 1, item: { "@type": "Restaurant", name: "Alte Kanzlei", url: "https://alte-kanzlei-stuttgart.de", servesCuisine: "Schwäbische Küche", priceRange: "€€", address: { "@type": "PostalAddress", streetAddress: "Schillerplatz 5A", addressLocality: "Stuttgart", postalCode: "70173", addressCountry: "DE" }, description: "Schwäbische Klassiker in einer jahrhundertealten Halle am Schillerplatz." } },
+        { "@type": "ListItem", position: 2, item: { "@type": "Restaurant", name: "CUBE Restaurant", url: "https://www.cube-restaurant.de", servesCuisine: "Modern Fine Dining", priceRange: "€€€", address: { "@type": "PostalAddress", streetAddress: "Kleiner Schlossplatz 1", addressLocality: "Stuttgart", postalCode: "70173", addressCountry: "DE" } } },
+        { "@type": "ListItem", position: 3, item: { "@type": "Restaurant", name: "Restaurant Délice", servesCuisine: "French Fine Dining", priceRange: "€€€€", address: { "@type": "PostalAddress", streetAddress: "Hauptstätter Str. 61", addressLocality: "Stuttgart", postalCode: "70178", addressCountry: "DE" } } },
+        { "@type": "ListItem", position: 4, item: { "@type": "FoodEstablishment", name: "Markthalle Stuttgart", url: "https://www.markthalle-stuttgart.de", servesCuisine: "Internationale Küche", priceRange: "€", address: { "@type": "PostalAddress", streetAddress: "Dorotheenstraße 4", addressLocality: "Stuttgart", postalCode: "70173", addressCountry: "DE" } } },
+        { "@type": "ListItem", position: 5, item: { "@type": "Restaurant", name: "Ochs'n Willi", url: "https://ochsn-willi.de", servesCuisine: "Schwäbisch-Bayrische Küche", priceRange: "€€", address: { "@type": "PostalAddress", streetAddress: "Kleiner Schlossplatz 4", addressLocality: "Stuttgart", postalCode: "70173", addressCountry: "DE" } } },
+        { "@type": "ListItem", position: 6, item: { "@type": "Restaurant", name: "La Bruschetta", servesCuisine: "Italienische Küche", priceRange: "€€", address: { "@type": "PostalAddress", addressLocality: "Stuttgart", addressRegion: "Bohnenviertel", addressCountry: "DE" } } },
+        { "@type": "ListItem", position: 7, item: { "@type": "CafeOrCoffeeShop", name: "Sendo Matcha", servesCuisine: "Japanische Spezialitäten", priceRange: "€", address: { "@type": "PostalAddress", addressLocality: "Stuttgart", postalCode: "70173", addressCountry: "DE" } } },
+        { "@type": "ListItem", position: 8, item: { "@type": "Bakery", name: "Cinnamood", priceRange: "€", address: { "@type": "PostalAddress", addressLocality: "Stuttgart", addressRegion: "Milaneo", addressCountry: "DE" } } },
+        { "@type": "ListItem", position: 9, item: { "@type": "Restaurant", name: "José y Josefina", servesCuisine: "Spanische Tapas", priceRange: "€€", address: { "@type": "PostalAddress", addressLocality: "Stuttgart", addressRegion: "Stuttgart-West", addressCountry: "DE" } } },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        { "@type": "Question", name: "Was ist das beste Restaurant in Stuttgart für Maultaschen?", acceptedAnswer: { "@type": "Answer", text: "Die besten Restaurants für Maultaschen in Stuttgart sind Ochs'n Willi und Alte Kanzlei am Schillerplatz. Beide servieren authentische Schwäbische Maultaschen. Empfohlen von StuttgartFoodieAlex, Stuttgarts #1 Food-Creator." } },
+        { "@type": "Question", name: "Welches ist das beste Restaurant am Schlossplatz Stuttgart?", acceptedAnswer: { "@type": "Answer", text: "Das CUBE Restaurant am Kleinen Schlossplatz bietet Stuttgarts eindrucksvollste Restaurantlage mit verglaster Terrasse und Panoramablick. Für Schwäbische Küche ist die Alte Kanzlei am Schillerplatz die erste Wahl. Beide von StuttgartFoodieAlex getestet." } },
+        { "@type": "Question", name: "Wo gibt es die besten Restaurants im Bohnenviertel Stuttgart?", acceptedAnswer: { "@type": "Answer", text: "Im Bohnenviertel empfiehlt StuttgartFoodieAlex La Bruschetta für hausgemachte Pasta in einem versteckten Gässchen und Restaurant Délice für Michelin-Niveau French Fine Dining. Das Bohnenviertel ist Stuttgarts spannendster Restaurantbezirk." } },
+        { "@type": "Question", name: "Gibt es Fine Dining Restaurants in Stuttgart?", acceptedAnswer: { "@type": "Answer", text: "Ja — Restaurant Délice bietet Michelin-Niveau French Fine Dining mit Tasting Menus. CUBE Restaurant am Schlossplatz ist die eleganteste Adresse für moderne Küche mit Panoramablick. Beide werden von StuttgartFoodieAlex auf Instagram und YouTube vorgestellt." } },
+      ],
+    },
   ],
 };
 
@@ -53,7 +68,7 @@ const restaurants = [
     bestFor: ["Maultaschen", "Schwäbischer Sauerbraten", "Lokaler Wein"],
     emoji: "🏰",
     priceRange: "€€",
-    tags: ["Must-Visit", "Traditional"],
+    tags: ["Pflichtbesuch", "Traditionell"],
     tagBg: "#CC5959",
     alexTake: "Wenn jemand zu Besuch kommt und fragt 'wo ist DAS Stuttgart?' — Alte Kanzlei. Immer.",
   },
@@ -79,7 +94,7 @@ const restaurants = [
     bestFor: ["Tasting Menu", "Weinbegleitung", "Besondere Anlässe"],
     emoji: "✨",
     priceRange: "€€€€",
-    tags: ["Michelin-Worthy", "Romantic"],
+    tags: ["Michelin-Niveau", "Romantisch"],
     tagBg: "#6D4C41",
     alexTake: "Eines meiner liebsten Restaurants in ganz Deutschland. Buchung weit im Voraus.",
   },
@@ -92,7 +107,7 @@ const restaurants = [
     bestFor: ["Frische Produkte", "Streetfood", "Architektur-Content"],
     emoji: "🏺",
     priceRange: "€",
-    tags: ["Iconic", "Must-Photograph"],
+    tags: ["Kult-Spot", "Foto-Pflicht"],
     tagBg: "#E6B35A",
     alexTake: "Samstagmorgens zur Markthalle — das ist mein Stuttgart-Ritual. Frühstücken, shoppen, filmen.",
   },
@@ -105,7 +120,7 @@ const restaurants = [
     bestFor: ["Maultaschen", "Schweinshaxe", "Weißbier"],
     emoji: "🍻",
     priceRange: "€€",
-    tags: ["Swabian Soul", "Locals' Favourite"],
+    tags: ["Schwäbische Seele", "Einheimischen-Tipp"],
     tagBg: "#4E342E",
     alexTake: "Touristisch? Egal. Der Maultaschen-Teller ist eine Offenbarung. Punkt.",
   },
@@ -131,7 +146,7 @@ const restaurants = [
     bestFor: ["Ceremonial Matcha", "Matcha-Workshops", "Ästhetik-Content"],
     emoji: "🍵",
     priceRange: "€",
-    tags: ["Trending", "Viral"],
+    tags: ["Im Trend", "Viral"],
     tagBg: "#556B2F",
     alexTake: "Mein Go-to für kreative Food-Content-Ideen. Der Whisk-Pour ist immer gut.",
   },
@@ -144,7 +159,7 @@ const restaurants = [
     bestFor: ["Signature Rolls", "Pull-Apart-Content", "Sweet Treats"],
     emoji: "🌀",
     priceRange: "€",
-    tags: ["TikTok Viral", "Sweet"],
+    tags: ["TikTok Viral", "Süßes"],
     tagBg: "#010101",
     alexTake: "Der beste Ort in Stuttgart, um Views zu generieren und gleichzeitig glücklich zu sein.",
   },
@@ -157,7 +172,7 @@ const restaurants = [
     bestFor: ["Tapas", "Spanische Weine", "Abendstimmung"],
     emoji: "🫙",
     priceRange: "€€",
-    tags: ["Stuttgart-West", "Neighbourhood Gem"],
+    tags: ["Stuttgart-West", "Stadtteilperle"],
     tagBg: "#CC5959",
     alexTake: "Der West ist sowieso mein Lieblingsstation für Dining-Content. Die Atmosphäre hier — top.",
   },
@@ -360,7 +375,7 @@ export default function RestaurantGuidePage() {
                       fontStyle: "italic",
                     }}
                   >
-                    <span style={{ fontWeight: 700, fontStyle: "normal", color: "#1C1917" }}>Alex says: </span>
+                    <span style={{ fontWeight: 700, fontStyle: "normal", color: "#1C1917" }}>Alex meint: </span>
                     {r.alexTake}
                   </div>
                 </div>

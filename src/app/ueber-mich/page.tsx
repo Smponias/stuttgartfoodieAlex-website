@@ -182,20 +182,20 @@ export default function UeberMichPage() {
             }}
           >
             <p style={{ color: "rgba(28,25,23,0.75)", lineHeight: 1.8, fontSize: "1.05rem", marginBottom: "1.25rem" }}>
-              Alles begann mit einer einfachen Frage: <strong style={{ color: "#1C1917" }}>&bdquo;Warum redet niemand über die gute Küche in Stuttgart?&ldquo;</strong>
-              Die Stadt ist die Heimat der Schwäbischen Küche — Maultaschen, Spätzle, Zwiebelrostbraten —
-              und hat gleichzeitig eine der spannendsten Restaurant-Szenen Deutschlands.
-              Aber im Netz war davon kaum etwas zu sehen.
+              Ich bin ein <strong style={{ color: "#1C1917" }}>Fressfluencer</strong> — und ich meine das vollkommen ernst.
+              Kein PR-Lunch, kein Pressetermin, kein kostenloses Essen gegen gute Bewertung.
+              Ich bezahle immer selbst, ich sage was ich denke, und wenn der Döner nicht stimmt, sage ich es.
             </p>
             <p style={{ color: "rgba(28,25,23,0.75)", lineHeight: 1.8, fontSize: "1.05rem", marginBottom: "1.25rem" }}>
-              Also habe ich angefangen, selbst zu posten. Erst auf Instagram,
-              dann auf TikTok, dann auf YouTube. Keine Strategie, kein Plan —
-              nur die Kamera, die Küche und das ehrliche Feedback nach dem ersten Bissen.
+              Angefangen hat es mit dem Charisma Döner auf der Gutenbergstraße — ich wollte wissen,
+              ob er wirklich der beste in Stuttgart ist. Ich habe gefilmt, getestet, ehrlich bewertet.
+              Das Video lief. Also habe ich weitergemacht: beim TooGoodToGo-Rescue im Minas Coffee,
+              beim Schnitzel in der Weinstube, beim Matcha-Whisk in der Königsstraße.
             </p>
             <p style={{ color: "rgba(28,25,23,0.75)", lineHeight: 1.8, fontSize: "1.05rem" }}>
-              Heute ist <strong style={{ color: "#1C1917" }}>StuttgartFoodieAlex</strong> Stuttgarts führende Food-Plattform.
-              Jeden Tag teile ich neue Restaurants, Rezepte und Momente — immer authentisch,
-              immer mit dem Herz eines echten Stuttgart-Fans.
+              Heute ist <strong style={{ color: "#1C1917" }}>StuttgartFoodieAlex</strong> auf Instagram, TikTok und YouTube —
+              mit über 156 Posts und einer Community, die mir ihre eigenen Geheimtipps schickt.
+              Das ist das Beste daran.
             </p>
           </div>
 
@@ -310,12 +310,15 @@ export default function UeberMichPage() {
               color: "rgba(245,240,232,0.65)",
               fontSize: "1rem",
               lineHeight: 1.65,
-              marginBottom: "2rem",
+              marginBottom: "1rem",
             }}
           >
             Ich arbeite mit Restaurants, Brands und Food-Unternehmen zusammen,
             die zur Stuttgarter Food-Szene und meiner Community passen.
             Schreib mir eine DM auf Instagram oder per Mail.
+          </p>
+          <p style={{ color: "#E6B35A", fontSize: "0.95rem", fontWeight: 600, marginBottom: "2rem" }}>
+            Hast du einen Geheimtipp für Stuttgart? Schick mir einfach eine DM — ich teste ihn. 🍽️
           </p>
           <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
             <a

@@ -56,6 +56,58 @@ export const localBusinessSchema = {
   inLanguage: ["de", "en"],
 };
 
+export const websiteAndPersonSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://stuttgartfoodiealex.de/#website",
+      url: "https://stuttgartfoodiealex.de",
+      name: "StuttgartFoodieAlex",
+      description:
+        "Stuttgarts #1 Food Blog — die besten Restaurants, Rezepte und Food-Spots in Stuttgart von Alex.",
+      inLanguage: ["de", "en"],
+      publisher: { "@id": "https://stuttgartfoodiealex.de/#person" },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: "https://stuttgartfoodiealex.de/?s={search_term_string}",
+        },
+        "query-input": "required name=search_term_string",
+      },
+    },
+    {
+      "@type": "Person",
+      "@id": "https://stuttgartfoodiealex.de/#person",
+      name: "Alex",
+      alternateName: "StuttgartFoodieAlex",
+      url: "https://stuttgartfoodiealex.de/ueber-mich",
+      image: "https://stuttgartfoodiealex.de/images/alex-portrait.jpg",
+      description:
+        "Alex ist Stuttgarts führender Food-Creator und Blogger. Täglich aktiv auf Instagram, TikTok und YouTube mit Restaurant-Tipps, Rezepten und Food-Spots aus Stuttgart und der Region.",
+      jobTitle: "Food Creator & Blogger",
+      knowsAbout: [
+        "Schwäbische Küche",
+        "Stuttgart Restaurants",
+        "Maultaschen",
+        "Käsespätzle",
+        "Food Photography",
+        "Recipe Development",
+        "Stuttgart Bohnenviertel",
+        "German Food Culture",
+      ],
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Stuttgart",
+        addressRegion: "Baden-Württemberg",
+        addressCountry: "DE",
+      },
+      sameAs: [siteConfig.instagram, siteConfig.tiktok, siteConfig.youtube],
+    },
+  ],
+};
+
 export const homepageFAQSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
