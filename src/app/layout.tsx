@@ -1,10 +1,18 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Syne, Playfair_Display, Fraunces } from "next/font/google";
 import "./globals.css";
 import { localBusinessSchema, websiteAndPersonSchema } from "@/lib/schema";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StickyFollowBar from "@/components/StickyFollowBar";
+import ScrollEffects from "@/components/ScrollEffects";
+
+const syne = Syne({
+  subsets: ["latin"],
+  variable: "--font-syne",
+  weight: ["700", "800"],
+  display: "swap",
+});
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -12,11 +20,16 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-const inter = Inter({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-fraunces",
+  style: ["normal", "italic"],
+  weight: ["300", "400"],
   display: "swap",
 });
+
+// (inter replaced by fraunces for body — keeping variable name for className compat)
+
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://stuttgartfoodiealex.de"),
@@ -95,7 +108,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="de" className={`${playfair.variable} ${inter.variable}`}>
+    <html lang="de" className={`${syne.variable} ${playfair.variable} ${fraunces.variable}`}>
       <head>
         <script
           type="application/ld+json"
@@ -109,6 +122,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className="antialiased">
+        <ScrollEffects />
         <Navbar />
         <main>{children}</main>
         <Footer />
